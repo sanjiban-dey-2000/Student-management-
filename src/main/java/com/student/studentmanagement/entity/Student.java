@@ -45,6 +45,6 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
-    private Set<Course> courses=new HashSet<>();
+    private Set<Course> course=new HashSet<>();
     
 }

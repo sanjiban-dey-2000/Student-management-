@@ -33,5 +33,5 @@ public class Course {
     private String description;
 
     @ManyToMany(mappedBy = "course")
-    private Set<Student> students=new HashSet<>();
+    private Set<Student> student=new HashSet<>();
 }
