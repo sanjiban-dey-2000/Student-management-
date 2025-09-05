@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -29,4 +32,6 @@ public class Course {
     @Column(nullable = false)
     private String description;
 
+    @ManyToMany(mappedBy = "course")
+    private Set<Student> students=new HashSet<>();
 }
