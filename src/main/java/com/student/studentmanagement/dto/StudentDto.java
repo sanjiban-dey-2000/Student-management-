@@ -1,9 +1,11 @@
 package com.student.studentmanagement.dto;
 
 import com.student.studentmanagement.entity.GenderType;
+import com.student.studentmanagement.entity.Student;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.function.Function;
 
 @Data
 @Getter

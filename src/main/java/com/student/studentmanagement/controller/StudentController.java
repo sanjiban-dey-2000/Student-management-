@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -24,6 +26,11 @@ public class StudentController {
     @GetMapping("/student/{id}")
     public ResponseEntity<StudentDto> getStudentById(@PathVariable Long id){
         return ResponseEntity.ok(studentService.getStudentById(id));
+    }
+
+    @GetMapping("/students")
+    public ResponseEntity<List<StudentDto>> getAllStudents(){
+        return ResponseEntity.ok(studentService.getAllStudents());
     }
 
 }
