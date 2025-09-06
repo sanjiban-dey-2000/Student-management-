@@ -12,8 +12,9 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class AddStudentDto {
     private String name;
-    private int phone;
+    private String phone;
     private String email;
     private LocalDate dateOfBirth;
     private GenderType gender;
+
 }

@@ -6,4 +6,6 @@ import com.student.studentmanagement.dto.StudentDto;
 public interface StudentService {
 
     StudentDto createStudent(AddStudentDto addStudentDto);
+
+    StudentDto getStudentById(Long id);
 }

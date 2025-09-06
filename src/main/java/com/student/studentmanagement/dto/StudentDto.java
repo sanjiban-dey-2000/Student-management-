@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class StudentDto {
     private Long id;
     private String name;
-    private int phone;
+    private String phone;
     private String email;
     private LocalDate dateOfBirth;
     private GenderType gender;

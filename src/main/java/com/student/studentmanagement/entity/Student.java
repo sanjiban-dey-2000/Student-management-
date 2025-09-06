@@ -27,7 +27,7 @@ public class Student {
     private String name;
 
     @Column(nullable = false,unique = true)
-    private int phone;
+    private String phone;
 
     @Column(nullable = false,unique = true)
     @Email(message = "Provide a valid email id")
