@@ -12,4 +12,6 @@ public interface StudentService {
     StudentDto getStudentById(Long id);
 
     List<StudentDto> getAllStudents();
+
+    StudentDto updateStudentById(Long id, AddStudentDto addStudentDto);
 }

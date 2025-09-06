@@ -37,4 +37,17 @@ public class StudentServiceImpl implements StudentService {
         List<StudentDto> allStudentDto=allStudents.stream().map(student->modelMapper.map(student,StudentDto.class)).toList();
         return allStudentDto;
     }
+
+    @Override
+    public StudentDto updateStudentById(Long id,AddStudentDto addStudentDto){
+        Student student=studentRepository.findById(id).orElseThrow(()->new RuntimeException("Student not found"));
+        student.setName(addStudentDto.getName());
+        student.setPhone(addStudentDto.getPhone());
+        student.setEmail(addStudentDto.getEmail());
+        student.setDateOfBirth(addStudentDto.getDateOfBirth());
+        student.setGender(addStudentDto.getGender());
+
+        Student updatedStudent=studentRepository.save(student);
+        return modelMapper.map(updatedStudent,StudentDto.class);
+    }
 }

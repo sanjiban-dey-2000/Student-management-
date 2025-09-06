@@ -33,4 +33,9 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getAllStudents());
     }
 
+    @PutMapping("/student/{id}/update")
+    public ResponseEntity<StudentDto> updateStudentById(@PathVariable Long id,@RequestBody AddStudentDto addStudentDto){
+        return ResponseEntity.status(HttpStatus.OK).body(studentService.updateStudentById(id,addStudentDto));
+    }
+
 }
