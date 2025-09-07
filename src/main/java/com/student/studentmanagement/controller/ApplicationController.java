@@ -1,5 +1,6 @@
 package com.student.studentmanagement.controller;
 
+import com.student.studentmanagement.dto.AddCourseDto;
 import com.student.studentmanagement.dto.StudentDto;
 import com.student.studentmanagement.dto.ViewStudentDto;
 import com.student.studentmanagement.service.serviceinterface.ApplicationService;
@@ -30,5 +31,8 @@ public class ApplicationController {
         return ResponseEntity.status(HttpStatus.OK).body(applicationService.getStudentById(courseId));
     }
 
-    @GetMapping("/student/{st}")
+    @GetMapping("/student/{studentId}/course")
+    public ResponseEntity<List<AddCourseDto>> getCourseByStudentId(@PathVariable Long studentId){
+        return ResponseEntity.status(HttpStatus.OK).body(applicationService.getCourseByStudentId(studentId));
+    }
 }

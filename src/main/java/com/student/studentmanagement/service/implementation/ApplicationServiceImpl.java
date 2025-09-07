@@ -1,5 +1,6 @@
 package com.student.studentmanagement.service.implementation;
 
+import com.student.studentmanagement.dto.AddCourseDto;
 import com.student.studentmanagement.dto.StudentDto;
 import com.student.studentmanagement.dto.ViewStudentDto;
 import com.student.studentmanagement.entity.Course;
@@ -39,5 +40,12 @@ public class ApplicationServiceImpl implements ApplicationService {
         Course course=courseRepository.findById(courseId).orElseThrow(()->new RuntimeException("Course not found"));
 
         return course.getStudent().stream().map(student->modelMapper.map(student,ViewStudentDto.class)).toList();
+    }
+
+    @Override
+    public List<AddCourseDto> getCourseByStudentId(Long studentId){
+        Student student=studentRepository.findById(studentId).orElseThrow(()->new RuntimeException("Student not found"));
+
+        return student.getCourse().stream().map(course->modelMapper.map(course,AddCourseDto.class)).toList();
     }
 }
