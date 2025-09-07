@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -23,5 +25,10 @@ public class CourseController {
     @GetMapping("/course/{id}")
     public ResponseEntity<CourseDto> getCourseById(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(courseService.getCourseById(id));
+    }
+
+    @GetMapping("/course")
+    public ResponseEntity<List<CourseDto>> getAllCourse(){
+        return ResponseEntity.status(HttpStatus.OK).body(courseService.getAllCourse());
     }
 }

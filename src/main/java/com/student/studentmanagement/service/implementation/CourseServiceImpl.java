@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CourseServiceImpl implements CourseService {
@@ -27,5 +29,13 @@ public class CourseServiceImpl implements CourseService {
         Course course=courseRepository.findById(id).orElseThrow(()->new RuntimeException("Course not found with id "+id));
         return modelMapper.map(course,CourseDto.class);
     }
+
+    @Override
+    public List<CourseDto> getAllCourse(){
+        List<Course> courses=courseRepository.findAll();
+        List<CourseDto> courseDtoList=courses.stream().map(course->modelMapper.map(course,CourseDto.class)).toList();
+        return courseDtoList;
+    }
+
 
 }
