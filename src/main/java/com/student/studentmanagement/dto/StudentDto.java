@@ -1,10 +1,13 @@
 package com.student.studentmanagement.dto;
 
+import com.student.studentmanagement.entity.Course;
 import com.student.studentmanagement.entity.GenderType;
 import com.student.studentmanagement.entity.Student;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Function;
 
 @Data
@@ -19,4 +22,5 @@ public class StudentDto {
     private String email;
     private LocalDate dateOfBirth;
     private GenderType gender;
+    private Set<CourseDto> course=new HashSet<>();
 }
