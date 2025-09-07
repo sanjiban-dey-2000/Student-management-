@@ -5,4 +5,6 @@ import com.student.studentmanagement.dto.CourseDto;
 
 public interface CourseService {
     CourseDto addCourse(AddCourseDto addCourseDto);
+
+    CourseDto getCourseById(Long id);
 }

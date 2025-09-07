@@ -7,9 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/api")
@@ -20,5 +18,10 @@ public class CourseController {
     @PostMapping("/course/add")
     public ResponseEntity<CourseDto> addCourse(@RequestBody AddCourseDto addCourseDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(courseService.addCourse(addCourseDto));
+    }
+
+    @GetMapping("/course/{id}")
+    public ResponseEntity<CourseDto> getCourseById(@PathVariable Long id){
+        return ResponseEntity.status(HttpStatus.OK).body(courseService.getCourseById(id));
     }
 }

@@ -22,4 +22,10 @@ public class CourseServiceImpl implements CourseService {
         return modelMapper.map(newCourse,CourseDto.class);
     }
 
+    @Override
+    public CourseDto getCourseById(Long id){
+        Course course=courseRepository.findById(id).orElseThrow(()->new RuntimeException("Course not found with id "+id));
+        return modelMapper.map(course,CourseDto.class);
+    }
+
 }
