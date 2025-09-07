@@ -1,5 +1,6 @@
 package com.student.studentmanagement.controller;
 
+import com.student.studentmanagement.dto.CourseDto;
 import com.student.studentmanagement.service.serviceinterface.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,5 +15,5 @@ public class CourseController {
     private final CourseService courseService;
 
     @PostMapping("/course/add")
-    public ResponseEntity<>
+    public ResponseEntity<CourseDto> addCourse()
 }
