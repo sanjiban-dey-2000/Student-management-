@@ -1,6 +1,10 @@
 package com.student.studentmanagement.dto;
 
+import com.student.studentmanagement.entity.Student;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Setter
@@ -13,4 +17,5 @@ public class CourseDto {
     private int duration;
     private double price;
     private String description;
+    private Set<StudentDto> student=new HashSet<>();
 }
